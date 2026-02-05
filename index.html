@@ -142,17 +142,18 @@
             justify-content: center;
             gap: 12px;
             margin-bottom: 16px;
-            font-size: 15px;
-            font-weight: 400;
+            font-size: 16px;
+            font-weight: 500;
         }
 
         .contact-item i {
             color: var(--bright-blue);
-            width: 20px;
-            font-size: 16px;
+            width: 24px;
+            font-size: 18px;
         }
 
-        .contact-item a {
+        .contact-item a,
+        .contact-item span {
             color: var(--white);
             text-decoration: none;
             transition: color 0.2s ease;
@@ -163,26 +164,32 @@
         }
 
         .contact-label {
-            font-size: 10px;
-            font-weight: 500;
-            letter-spacing: 0.1em;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.12em;
             text-transform: uppercase;
-            opacity: 0.6;
+            color: var(--bright-blue);
             display: block;
-            margin-bottom: 2px;
+            margin-bottom: 6px;
         }
 
         .contact-item-stacked {
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-bottom: 16px;
+            margin-bottom: 20px;
         }
 
         .contact-item-stacked .contact-row {
             display: flex;
             align-items: center;
             gap: 12px;
+        }
+
+        .contact-item-stacked .contact-row a {
+            font-size: 18px;
+            font-weight: 500;
+            color: var(--white);
         }
 
         /* Primary CTA Button */
