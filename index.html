@@ -498,31 +498,11 @@
             setTimeout(() => toast.classList.remove('show'), 2500);
         }
 
-        // Send / Share Card
+        // Send My Card via text message
         function sendCard() {
-            const cardUrl = window.location.href;
-            const shareData = {
-                title: 'Eytan Benzeno | Bogen.ai',
-                text: 'Check out Eytan Benzeno\'s digital business card:',
-                url: cardUrl
-            };
-
-            if (navigator.share) {
-                navigator.share(shareData).catch(() => {});
-            } else {
-                navigator.clipboard.writeText(cardUrl).then(() => {
-                    showToast('Card link copied! Paste it in a text or email.');
-                }).catch(() => {
-                    // Fallback for older browsers
-                    const textarea = document.createElement('textarea');
-                    textarea.value = cardUrl;
-                    document.body.appendChild(textarea);
-                    textarea.select();
-                    document.execCommand('copy');
-                    document.body.removeChild(textarea);
-                    showToast('Card link copied! Paste it in a text or email.');
-                });
-            }
+            const cardUrl = 'https://edmundbogen.github.io/eytan-card/';
+            const message = 'Hey! Here\'s my digital business card: ' + cardUrl;
+            window.location.href = 'sms:?&body=' + encodeURIComponent(message);
         }
 
         // Generate QR Code
